@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAjWiMF8Zxp6JOhOlqRSyvEeSZZxkXx1D0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>997865987043</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.josephmp5.manifestenergy</string>
+	<key>PROJECT_ID</key>
+	<string>manifestation-7973f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>manifestation-7973f.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:997865987043:ios:2bec9e875c2caa81feded6</string>
+</dict>
+</plist>
