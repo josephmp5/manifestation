@@ -1,36 +1,37 @@
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:manifestation/api.dart';
 
 class ImageApi {
-  Future<String> generateImage(String manifest) async {
+  Future<String?> generateImage(String manifest) async {
     try {
       var response = await http.post(
         Uri.parse('https://api.openai.com/v1/images/generations'),
         headers: <String, String>{
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer YOUR_API_KEY',
+          'Authorization': 'Bearer ${Api.api}',
         },
         body: jsonEncode({
           'model': "dall-e-3",
           'prompt': manifest,
           'n': 1,
           'size': '1024x1024',
-          'quality': "standart"
         }),
       );
+
+      print('Response Status Code: ${response.statusCode}');
+      print('Response Body: ${response.body}');
 
       if (response.statusCode == 200) {
         return json.decode(response.body)['data'][0]['url'];
       } else {
-        throw Exception('Failed to generate image');
+        final error = json.decode(response.body);
+        throw Exception(
+            'Failed to generate image: ${error['error']['message'] ?? 'Unknown error'}');
       }
     } catch (e) {
-      SnackBar(
-        content: Text(e.toString()),
-      );
-      throw Exception('Failed to generate image');
+      print('Error: $e');
+      return null;
     }
   }
 }
